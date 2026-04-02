@@ -8,7 +8,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model clients {
+model customer {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   /// Nested objects had no data in the sample dataset to introspect a nested type.
   adress   Json @required
@@ -26,8 +26,10 @@ model orders {
 
 model products {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
-  brand       String
-  price       Float
-  productName String
-  stock       Int
+  brand       String @required
+  description String @required
+  image_url   String @required
+  price       Float @required
+  productName String @required
+  stock       Int @required
 }
