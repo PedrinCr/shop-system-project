@@ -1,0 +1,32 @@
+{
+  "name": "shop-sytem-project",
+  "version": "1.0.0",
+  "description": "Um sistema de loja utilizando JavaScript e NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedrinCr/shop-system-project.git"
+  },
+  "keywords": [],
+  "author": "Pedro Costa",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/PedrinCr/shop-system-project/issues"
+  },
+  "homepage": "https://github.com/PedrinCr/shop-system-project#readme",
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "mongodb": "^7.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prisma": "^6.19.3"
+  }
+}

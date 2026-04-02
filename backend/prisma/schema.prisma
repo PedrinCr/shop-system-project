@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model clients {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  /// Nested objects had no data in the sample dataset to introspect a nested type.
+  adress   Json @required
+  email    String @unique @required
+  name     String @required
+  password String @required
+  phone    String @unique @required
+}
+
+model orders {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  /// Nested objects had no data in the sample dataset to introspect a nested type.
+  infos Json @required
+}
+
+model products {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  brand       String
+  price       Float
+  productName String
+  stock       Int
+}
