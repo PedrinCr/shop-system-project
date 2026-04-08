@@ -1,19 +1,23 @@
-import cart from './cart.js';
-import customer from './customer.js';
-import itemCart from './items-cart.js';
+import Customer from './customer.js';
 import order from './order.js';
-import products from './product.js';
+import Product from './product.js';
 
 export default class Shop {
-  constructor() {}
+  constructor() {
+    this.productsList = [];
+  }
 
-  AddProduct() {}
+  Cart(product, quantity) {
+    if (!this.productsList) {
+      return alert('No products in cart');
+    }
 
-  RemoveProduct() {}
+    const productItem = { product: product, quantity: quantity };
+    this.productsList.push(productItem);
+    return;
+  }
 
-  UpdateProduct() {}
-
-  ItemCart(product, quantity) {}
-
-  Cart(products) {}
+  Order(List) {
+    const newOrder = new order(List);
+  }
 }
